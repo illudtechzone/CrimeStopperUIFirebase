@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-row>
+    <ion-col>
+  <ion-searchbar animated color="light" placeholder="Enter the name "   mode="ios"></ion-searchbar>
+</ion-col>
+</ion-row>
+</ion-header>
+
+<ion-content>
+  <ion-segment (ionChange)="segmentChanged($event)"  mode="md">
+    <ion-segment-button value="friends" checked  mode="md">
+      <ion-label>Friends</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="others"  mode="md">
+      <ion-label >Others</ion-label >
+    </ion-segment-button>
+  </ion-segment>
+  
+  <ion-item lines="full">
+    <ion-avatar>
+      <img
+        src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=retro&f=y%22" />
+    </ion-avatar>
+    <ion-label position="fixed" padding>Manu</ion-label>
+  </ion-item>
+</ion-content>

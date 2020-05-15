@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-item lines="none">
+    <ion-title>Create Complaint PAge</ion-title>
+    <ion-icon name="close"slot="end" [routerLink]="['/tabs/tab1']"></ion-icon>
+  </ion-item>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+
+  <ion-textarea autofocus required placeholder="Describe your complaint " autoGrow rows="10" autocapitalize="true">
+  </ion-textarea>
+  </ion-card>
+
+  <ion-fab horizontal="start">
+    <ion-fab-button>
+      <ion-icon name="link"></ion-icon>
+    </ion-fab-button>
+   <ion-fab-list side="end">
+    <ion-fab-button><ion-icon  (click)="selectImage()" name="image"></ion-icon></ion-fab-button>
+  </ion-fab-list>
+
+  </ion-fab>
+
+
+
+
+
+</ion-content>
+
+<ion-footer>
+
+
+    <ion-button  (click)="selectImage()" expand="block">
+        SENT
+    </ion-button>
+
+
+
+</ion-footer>

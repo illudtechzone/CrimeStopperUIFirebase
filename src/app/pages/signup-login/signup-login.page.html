@@ -1,0 +1,108 @@
+<ion-header>
+  <ion-toolbar>
+<ion-title>Register</ion-title>
+<ion-buttons slot="start">
+  <ion-menu-button></ion-menu-button>
+</ion-buttons>
+</ion-toolbar>
+</ion-header>
+
+<ion-segment (ionChange)="slide($event)" [value]="value" mode="md">
+  <ion-segment-button value="login" mode="md">
+    <ion-label>Login</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="signup" mode="md">
+    <ion-label>Register</ion-label>
+  </ion-segment-button>  
+</ion-segment>
+
+<ion-content padding>
+  <ion-slides #slides (ionSlideDidChange)="slideChange()">
+    <ion-slide>
+      <ion-grid margin-top>
+        <ion-row justify-content-center text-center class="centre">
+          <ion-col size="6" justify-content-center>
+            <div class="circle">
+              <ion-icon class="large-icon" name="person"></ion-icon>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row justify-content-center class="centre">
+          <ion-col text-left class="container-box">
+            <form [formGroup]="loginForm">
+
+            <ion-item class="item-inner">
+              <ion-label color="medium" position="floating">Username or Email</ion-label>
+              <ion-input formControlName="name" background="light" [(ngModel)]="name"></ion-input>
+            </ion-item>
+            <ion-text  class="err-size ion-margin-start" color="danger" *ngIf="loginForm.get('name').invalid && showErrorLogin">Username Required</ion-text>
+
+            <ion-item class="item-inner">
+              <ion-label color="medium" position="floating">Password</ion-label>
+              <ion-input formControlName="password" type="password" [(ngModel)]="password"></ion-input>
+            </ion-item>
+            <ion-text  class="err-size ion-margin-start" color="danger" *ngIf="loginForm.get('password').invalid && showErrorLogin">Password Required</ion-text>
+            <div class="text-right">
+            <ion-text>
+              Forgot Password ?
+              </ion-text>
+            </div>
+            
+            <ion-button (click)="login()" expand="block" shape= "round" margin-top margin-bottom>Login
+            </ion-button>
+
+          </form>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+    <ion-slide>
+      <ion-grid margin-top>
+        <ion-row justify-content-center>
+          <ion-col size="6" text-center>
+            <div class="circle">
+              <ion-icon class="large-icon" name="person"></ion-icon>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row justify-content-center class="centre">
+          <ion-col text-left class="container-box">
+
+<form [formGroup]="signupForm"> 
+  
+  <ion-item class="item-inner">
+    <ion-label color="medium" position="floating">Email</ion-label>
+    <ion-input formControlName="email" background="light"></ion-input>
+  </ion-item>
+  <ion-text  class="err-size ion-margin-start" color="danger" *ngIf="signupForm.get('email').invalid && showErrorSignup">Invalid Email</ion-text>
+
+
+  <ion-item class="item-inner">
+    <ion-label color="medium" position="floating">Phone</ion-label>
+    <ion-input formControlName="phone" background="light"></ion-input>
+  </ion-item>
+  <ion-text  class="err-size ion-margin-start" color="danger" *ngIf="signupForm.get('phone').invalid && showErrorSignup ">Invalid Email</ion-text>
+
+
+  <ion-item class="item-inner">
+      <ion-label color="medium" position="floating">Password</ion-label>
+      <ion-input formControlName="password" type="password"></ion-input>
+    </ion-item>
+    <ion-text  class="err-size ion-margin-start" color="danger" *ngIf="signupForm.get('password').invalid && showErrorSignup">Password Required</ion-text>
+    
+
+<ion-item class="item-inner">
+  <ion-label color="medium" position="floating">Confirm Password</ion-label>
+  <ion-input formControlName="confirmPassword" type="password"></ion-input>
+</ion-item>
+<ion-text  class="err-size ion-margin-start" color="danger" *ngIf="signupForm.get('email').invalid && showErrorSignup">Password Required</ion-text>
+
+<ion-button (click)="signup()" expand="block" shape="round" margin-top margin-bottom>
+    Register</ion-button>
+  </form>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-slide>
+</ion-slides>
+</ion-content>

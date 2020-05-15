@@ -1,0 +1,7 @@
+{
+  "name": "twine",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

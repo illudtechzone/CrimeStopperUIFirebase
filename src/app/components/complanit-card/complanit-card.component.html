@@ -1,0 +1,71 @@
+<ion-card mode="ios">
+  <ion-card-header>
+    
+    <ion-item lines="full">
+      <ion-avatar>
+        <img
+          src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=retro&f=y%22"
+        />
+      </ion-avatar>
+
+      <ion-label position="fixed" padding>Manu</ion-label>
+     
+    </ion-item>
+   
+  </ion-card-header>
+ 
+  <ion-slides>
+    <ion-slide>
+      <img src="assets/bribe.jpg" />
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/bribe.jpg" />
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/bribe.jpg" />
+    </ion-slide>
+  </ion-slides>
+  <ion-card-content>
+    Keep close to Nature's heart... and break clear away, once in awhile, and
+    climb a mountain or spend a week in the woods. Wash your spirit clean.
+  </ion-card-content>
+  <ion-row>
+
+  
+
+    <ion-fab-button 
+      class="ion-padding"
+      vertical="bottom"
+      horizontal="end"
+      color="tertiary" >
+      <ion-icon name="thumbs-up"  mode="md"></ion-icon>
+    </ion-fab-button>
+    <ion-text class="responseTextData" >61k</ion-text>
+
+
+    <ion-fab-button  
+      padding
+      vertical="bottom"
+
+      horizontal="center"
+      color="tertiary" >
+      <ion-icon name="thumbs-down" mode="md"></ion-icon>
+    </ion-fab-button>
+    <ion-text class="responseTextData" >61k</ion-text>
+
+
+
+ 
+    <ion-fab-button  mode="md"
+      padding
+      vertical="bottom"
+      horizontal="end"
+      color="tertiary"
+      (click)="showComment()">
+
+      <ion-icon name="text" mode="md"></ion-icon>
+    </ion-fab-button>
+    <ion-text class="responseTextData" >61k</ion-text>
+ 
+  </ion-row>
+</ion-card>
